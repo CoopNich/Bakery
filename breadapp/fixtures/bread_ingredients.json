@@ -1,0 +1,65 @@
+[
+  {
+    "model": "breadapp.BreadIngredient",
+    "pk": 1,
+    "fields": {
+      "bread_id": 1,
+      "ingredient_id": 1,
+      "amount": "2 cups"
+    }
+  },
+  {
+    "model": "breadapp.BreadIngredient",
+    "pk": 2,
+    "fields": {
+      "bread_id": 1,
+      "ingredient_id": 4,
+      "amount": "1 ounce"
+    }
+  },
+  {
+    "model": "breadapp.BreadIngredient",
+    "pk": 3,
+    "fields": {
+      "bread_id": 1,
+      "ingredient_id": 3,
+      "amount": "5 cups"
+    }
+  },
+  {
+    "model": "breadapp.BreadIngredient",
+    "pk": 4,
+    "fields": {
+      "bread_id": 2,
+      "ingredient_id": 1,
+      "amount": "1.5 cups"
+    }
+  },
+  {
+    "model": "breadapp.BreadIngredient",
+    "pk": 5,
+    "fields": {
+      "bread_id": 2,
+      "ingredient_id": 5,
+      "amount": "6"
+    }
+  },
+  {
+    "model": "breadapp.BreadIngredient",
+    "pk": 6,
+    "fields": {
+      "bread_id": 3,
+      "ingredient_id": 1,
+      "amount": "1.5 cups"
+    }
+  },
+  {
+    "model": "breadapp.BreadIngredient",
+    "pk": 7,
+    "fields": {
+      "bread_id": 3,
+      "ingredient_id": 2,
+      "amount": "1.5 cups"
+    }
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "model": "breadapp.Bread",
+    "pk": 1,
+    "fields": {
+      "name": "Baguette",
+      "region": "France"
+    }
+  },
+  {
+    "model": "breadapp.Bread",
+    "pk": 2,
+    "fields": {
+      "name": "Banana bread",
+      "region": "United States"
+    }
+  },
+  {
+    "model": "breadapp.Bread",
+    "pk": 3,
+    "fields": {
+      "name": "Injera",
+      "region": "Eritrea Ethiopia"
+    }
+  }
+]

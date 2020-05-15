@@ -1,0 +1,42 @@
+[
+  {
+    "model": "breadapp.Ingredient",
+    "pk": 1,
+    "fields": {
+      "name": "Water",
+      "local_source": "The Tap"
+    }
+  },
+  {
+    "model": "breadapp.Ingredient",
+    "pk": 2,
+    "fields": {
+      "name": "Teff",
+      "local_source": "Teff Company"
+    }
+  },
+  {
+    "model": "breadapp.Ingredient",
+    "pk": 3,
+    "fields": {
+      "name": "Flour",
+      "local_source": "The Flour Mill"
+    }
+  },
+  {
+    "model": "breadapp.Ingredient",
+    "pk": 4,
+    "fields": {
+      "name": "Yeast",
+      "local_source": "Single-cell Organism"
+    }
+  },
+  {
+    "model": "breadapp.Ingredient",
+    "pk": 5,
+    "fields": {
+      "name": "Bananas",
+      "local_source": "Fruit Farm"
+    }
+  }
+]
