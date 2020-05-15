@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bread List</title>
+  </head>
+  <body>
+    <h1>Check out my yummy-ass bread, yo</h1>
+
+    <ol>
+    {% for bread in all_breads %}
+        <li>{{ bread.name }} from {{ bread.region }}</li>
+    {% endfor %}
+    </ol>
+  </body>
+</html>
