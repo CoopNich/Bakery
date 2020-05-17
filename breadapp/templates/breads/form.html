@@ -1,25 +1,41 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Add Bread</title>
-  </head>
-  <body>
-    <h1>Mmmm, let's get some new bread</h1>
 
+<head>
+  <meta charset="utf-8">
+  <title>Add Bread</title>
+</head>
 
-    <form action="{% url 'breadapp:bread_list' %}" method="post">
-      {% csrf_token %}
-      <fieldset>
-          <label for="name">Type: </label>
-          <input id="name" type="text" name="name">
-      </fieldset>
-      <fieldset>
-          <label for="region">Region: </label>
-          <input id="region" type="text" name="region">
-      </fieldset>
-      <input type="submit" value="Add It" />
-    </form>
-  </body>
+<body>
+  <h1>Mmmm, let's get some new bread</h1>
+
+  {% if bread.id is not None %}
+  <form action="{% url 'breadapp:bread_details' bread.id %}" method="post">
+  {% else %}
+  <form action="{% url 'breadapp:bread_list' %}" method="post">
+    {% endif %}
+    {% csrf_token %}
+    {% if bread.id is not None %}
+    <input type="hidden" name="name" id="name" value="{{ bread.name }}">
+    <p> Type: {{ bread.name }}</p>
+    {%else%}
+    <fieldset>
+      <label for="name">Type: </label>
+      <input id="name" type="text" name="name" value="{{ bread.name }}">
+    </fieldset>
+    {% endif %}
+    <fieldset>
+      <label for="region">Region: </label>
+      <input id="region" type="text" name="region" value="{{ bread.region }}">
+    </fieldset>
+    {% if bread.id is not None %}
+    <input type="hidden" name="actual_method" value="PUT">
+    <input type="submit" value="Update" />
+    {% else %}
+    <input type="submit" value="Add it" />
+    {% endif %}
+  </form>
+</body>
+
 </html>
