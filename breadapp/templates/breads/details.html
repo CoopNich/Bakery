@@ -18,6 +18,11 @@
         <ul>
             {% for ingredient in bread_ingredients %}
             <li>{{ingredient.name}} - {{ingredient.amount}}</li>
+            <form action="{% url 'breadapp:bread_details' ingredient.id %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="actual_method" value="DELETE">
+                <button>Delete</button>
+            </form>
             {% endfor %}
         </ul>
         </p>
