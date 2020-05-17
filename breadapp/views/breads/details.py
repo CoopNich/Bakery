@@ -7,7 +7,7 @@ from ..connection import Connection
 def bread_details(request, bread_id):
     if request.method == "GET":
         bread = get_bread(bread_id)
-        bread_ingredients = [i.ingredient for i in get_bread_ingredients(bread_id)]
+        bread_ingredients = get_bread_ingredients(bread_id)
         template = "breads/details.html"
 
         context = {

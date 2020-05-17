@@ -1,17 +1,23 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Bread List</title>
-  </head>
-  <body>
-    <h1>Check out my yummy-ass bread, yo</h1>
+</head>
+
+<body>
+    <h1>This is the <em>good</em> bread</h1>
     <button onclick="window.location.href='/bread/form'">Add</button>
-    <ol>
-    {% for bread in all_breads %}
-        <li>{{ bread.name }} from {{ bread.region }}</li>
-    {% endfor %}
-    </ol>
-  </body>
+    <div>
+        {% for bread in all_breads %}
+        <a href="{% url 'breadapp:bread_details' bread.id %}">
+            <h3>{{ bread.name }}</h3>
+        </a>
+        <p><em>{{ bread.region }}</em></p>
+        {% endfor %}
+    </div>
+</body>
+
 </html>

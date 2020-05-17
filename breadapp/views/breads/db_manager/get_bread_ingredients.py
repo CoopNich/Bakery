@@ -14,8 +14,10 @@ def get_bread_ingredients(bread_id):
         bi.id,
         bi.amount,
         bi.bread_id,
-        bi.ingredient_id
+        bi.ingredient_id,
+        i.name
         FROM breadapp_breadingredient bi
+        LEFT JOIN breadapp_ingredient i on bi.ingredient_id = i.id
         WHERE bi.bread_id = ?
         """, (bread_id, ))
 
