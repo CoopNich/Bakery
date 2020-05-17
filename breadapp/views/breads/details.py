@@ -16,8 +16,32 @@ def bread_details(request, bread_id):
         }
 
         return render(request, template, context)
-    if request.method == 'POST':
+
+
+    elif request.method == 'POST':
         form_data = request.POST
+        
+        if (
+            "actual_method" in form_data
+            and form_data["actual_method"] == "PUT"
+        ):
+            with sqlite3.connect(Connection.db_path) as conn:
+                db_cursor = conn.cursor()
+
+                db_cursor.execute("""
+                UPDATE breadapp_bread
+                SET name = ?,
+                    region = ?
+                WHERE id = ?
+                """,
+                (
+                    form_data['name'], form_data['region'],
+                     bread_id,
+                ))
+
+
+            return redirect(reverse('breadapp:bread_list'))
+
 
         if (
             "actual_method" in form_data

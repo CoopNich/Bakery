@@ -13,7 +13,7 @@
     <div>
         <p>Region: {{ bread.region }}</p>
 
-        <p>Ingredients:
+        <p>Ingredients:</p>
 
         <ul>
             {% for ingredient in bread_ingredients %}
@@ -25,7 +25,12 @@
             </form>
             {% endfor %}
         </ul>
-        </p>
+
+        <form action="{% url 'breadapp:bread_edit_form' bread.id %}" method="GET">
+            {% csrf_token %}
+            <button>Edit</button>
+        </form>
+
 
 </section>
 
